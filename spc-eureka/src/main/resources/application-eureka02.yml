@@ -1,0 +1,15 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: SPC-EUREKA
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka3:8763/eureka/
+  instance:
+    prefer-ip-address: false
+    hostname: eureka2
+  server:
+    enable-self-preservation: false

@@ -1,0 +1,52 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: spc-eureka
+
+# Eureka 配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10010/eureka/
+    # 是否注册到Eureka Server，由于当前就是一个Eureka Server，所以设置为false，无需自己注册到自己身上
+    register-with-eureka: false
+    # 是否从Eureka Server获取注册信息，由于当前是一个单点Eureka Server，所以设置为false
+    fetch-registry: false
+#  server:
+#    # 关闭自我保护
+#    enable-self-preservation: false
+#    # 驱逐下线的服务，间隔,5秒，默认是60s
+#    eviction-interval-timer-in-ms: 5
+
+
+## Eureka 高可用配置示例
+#---
+#spring:
+#  profiles: peer1
+#eureka:
+#  instance:
+#    hostname: peer1
+#  client:
+#    service-url:
+#      defaultZone: http://peer2:10012/eureka/, http://peer3:10013/eureka/
+#---
+#spring:
+#  profiles: peer2
+#eureka:
+#  instance:
+#    hostname: peer2
+#  client:
+#    service-url:
+#      defaultZone: http://peer1:10011/eureka/, http://peer3:10013/eureka/
+#---
+#spring:
+#  profiles: peer3
+#eureka:
+#  instance:
+#    hostname: peer3
+#  client:
+#    service-url:
+#      defaultZone: http://peer1:10011/eureka/, http://peer2:10012/eureka/
+
+

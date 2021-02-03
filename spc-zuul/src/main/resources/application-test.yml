@@ -1,0 +1,42 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: zuul-service
+# Eureka
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10010/eureka/
+
+# 注册到生产环境的高可用Eureka
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://10.43.82.96:8761/eureka/,http://10.43.0.96:8762/eureka/,http://10.43.149.29:8763/eureka/
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/,http://eureka3:8763/eureka/
+  instance:
+    prefer-ip-address: true
+
+zuul:
+  routes:
+    eureka-service-route: # 路由的名称，可以随便命名
+      path: /eureka-service/**  # 路由的访问地址
+      serviceId: SPC-EUREKA  # 路由到的微服务的名称
+    eureka-service-static-route:
+      path: /eureka/**
+      serviceId: SPC-EUREKA
+      stripPrefix: false
+      custom-sensitive-headers: true
+    goods-service-route:
+      path: /ms-goods/**
+      serviceId: GOODS-SERVICE
+    order-service-route:
+      path: /ms-order/**
+      serviceId: ORDER-SERVICE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

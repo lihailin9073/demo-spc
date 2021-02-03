@@ -1,0 +1,20 @@
+server:
+  port: 10020
+  servlet:
+    context-path: /spc-eureka-client
+spring:
+  application:
+    name: spc-eureka-client
+# Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10010/eureka/
+#  instance:
+#    # 将实例IP注册到Eureka Server上，而不是机器的主机名
+#    prefer-ip-address: true
+#    hostname: spc-erk
+#    # 心跳间隔时间,默认是30秒
+#    lease-renewal-interval-in-seconds: 2
+#    #最后一次心跳时间后leaseExpirationDurationInSeconds秒就认为是下线了，默认是90秒
+#    lease-expiration-duration-in-seconds: 6

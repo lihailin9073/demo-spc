@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="goods-client" />
+        <module name="goods-common" />
+        <module name="goods-server" />
+        <module name="order-client" />
+        <module name="order-common" />
+        <module name="order-server" />
+        <module name="spc-eureka" />
+        <module name="spc-eureka-client" />
+        <module name="spc-zuul" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="goods-client" options="-parameters" />
+      <module name="goods-common" options="-parameters" />
+      <module name="goods-server" options="-parameters" />
+      <module name="order-client" options="-parameters" />
+      <module name="order-common" options="-parameters" />
+      <module name="order-server" options="-parameters" />
+      <module name="spc-eureka" options="-parameters" />
+      <module name="spc-eureka-client" options="-parameters" />
+      <module name="spc-goods" options="-parameters" />
+      <module name="spc-order" options="-parameters" />
+      <module name="spc-zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

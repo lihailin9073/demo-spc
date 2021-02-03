@@ -1,0 +1,30 @@
+server:
+  port: 10030
+  servlet:
+    context-path: /spc-goods
+spring:
+  application:
+    name: goods-service
+  datasource:
+    url: jdbc:mysql://192.168.1.124:3306/spc_goods?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowMultiQueries=true
+    username: root
+    password: LHLlhl@870104
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+  rabbitmq:
+    host: 192.168.1.124
+    port: 5672
+    username: admin
+    password: 123456
+#  cloud:
+#    stream:
+#      bindings:
+#        spc-order:
+#          group: orderGroup
+#          content-type: application/json
+# Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10010/eureka/
